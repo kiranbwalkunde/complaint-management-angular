@@ -1,0 +1,17 @@
+.login-component {
+  background-color: #ffffff;
+  .login-wrapper {
+    background-color: #e5e5e5;
+    border: 1.5px solid #ecdfdf;
+		-webkit-box-shadow: 9px 10px 8px -3px rgba(212,172,212,0.91);
+		-moz-box-shadow: 9px 10px 8px -3px rgba(212,172,212,0.91);
+		box-shadow: 9px 10px 8px -3px rgba(212,172,212,0.91);
+  }
+
+  section {
+    & > picture > img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}

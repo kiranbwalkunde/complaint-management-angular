@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+// Importing Vendor Styles.
+@import './styles/apps/vendors/bootstrap.min.css';
+
+// Importing Component Styles.
+@import './styles/apps/components/login/login.style.scss';
+@import './styles/apps/components/login/user-registration.component.scss'
