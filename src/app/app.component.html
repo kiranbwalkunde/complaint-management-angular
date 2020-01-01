@@ -1,7 +1,8 @@
 <div class="app-root-component">
-	This is App Root Component.
-	<div class="element-to-render" *ngFor="let product of getProducts()">
-		The Product Name is : {{product.name}}
+	<div class="responsible-by-parent">
+		<app-login-confirmation [headingMessage]="'Login Account has been created successfully.'"></app-login-confirmation>
 	</div>
-	<app-login-confirmation headingMessage="Login Account has been created successfully."></app-login-confirmation>
+	<div class="responsible-by-parent">
+		<app-login-component></app-login-component>
+	</div>
 </div>

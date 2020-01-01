@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, ngOnInit } from '@angular/core';
+import { Input } from '@angular/core';
 
 @Component({
 	selector: 'app-login-confirmation',
@@ -7,9 +8,9 @@ import { Component, Input } from '@angular/core';
 export class LoginConfirmationComponent {
 	
 	@Input()
-	public headingMessage: string;
+	headingMessage: string;
 	
-	constructor() {
-		console.debug('The Login Confirmation component is ', this);
+	ngOnInit() {
+		console.debug('The Component has been initialized successfully: ', this, this.headingMessage);
 	}
 }

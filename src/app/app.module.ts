@@ -36,10 +36,18 @@ export class AppModule {
 	ngDoBootstrap(appRef: ApplicationRef) {
 		console.debug('The Bootstrap has been called');
 		components.forEach((componentRef: Type<{}>) => {
+			console.debug('Rendering the component ', this);
 			const factory = this.resolver.resolveComponentFactory(componentRef);
-			if (document.querySelector(factory.selector)) {
-				appRef.bootstrap(factory);
+			var documentNodes = document.querySelectorAll(factory.selector);
+			for (let index = 0; index < documentNodes.length; index ++) {
+				var parentElement = documentNodes[index].parentElement;
+				if (parentElement.className !== 'responsible-by-parent') {
+					appRef.bootstrap(factory, parentElement);
+				} else {
+					console.debug('Not Rendering an element as it responsible from the parent.', factory.selector);
+				}
 			}
 		});
 	}
 }
+ 

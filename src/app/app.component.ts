@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductListComponent } from './components/stackbliz/components/product-list/product-list.component';
 import { Product } from './components/stackbliz/models/product/product.model';
 
