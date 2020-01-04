@@ -1,4 +1,4 @@
-import { Component, ngOnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 
 @Component({
@@ -9,8 +9,4 @@ export class LoginConfirmationComponent {
 	
 	@Input()
 	headingMessage: string;
-	
-	ngOnInit() {
-		console.debug('The Component has been initialized successfully: ', this, this.headingMessage);
-	}
 }

@@ -1,102 +1,111 @@
 <div class="container mx-auto">
-	<div class="user-registration-component">
-		<section class="heading bg-primary text-white py-4 text-center h5">
-			User Registration for further enquiries.
-		</section>
-		<section class="user-body">
-			<form class="row mx-0">
-				<div class="col-lg-6 col-md-8 bg-light">
-					<!--/* The First Name of the User who will be needed to login. */-->
-					<div class="form-group">
-						<label for="firstName">First Name</label>
-            <input autofocus="true" id="firstName" name="firstName" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
+  <div class="user-registration-component">
+    <section class="heading bg-primary text-white py-4 text-center h5">
+      User Registration for further enquiries.
+    </section>
+    <section class="user-body">
+      <form class="row mx-0" #form="ngForm" (ngSubmit)="onSubmitForm(form)">
+        <div class="col-lg-6 col-md-8 bg-light">
+          <!--/* The First Name of the User who will be needed to login. */-->
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input autofocus="true" [(ngModel)]="userModel.firstName" id="firstName" name="firstName" type="text"
+              maxlength="50" class="form-control w-100" autocomplete="off">
           </div>
-					
-					<!--/* The Middle Name. */-->
-					<div class="form-group">
-						<label for="middleName">Middle Name</label>
-            <input id="middleName" name="middleName" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
+
+          <!--/* The Middle Name. */-->
+          <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input id="middleName" [(ngModel)]="userModel.middleName" name="middleName" type="text" maxlength="50"
+              class="form-control w-100" autocomplete="off">
           </div>
-					
-					<!--/* The Last Name. */-->
-					<div class="form-group">
-						<label for="lastName">Last Name</label>
-            <input id="lastName" name="lastName" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
+
+          <!--/* The Last Name. */-->
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" [(ngModel)]="userModel.lastName" name="lastName" type="text" maxlength="50"
+              class="form-control w-100" autocomplete="off">
           </div>
-					
-					<!--/* Preferred User ID. */-->
-					<div class="form-group">
-						<label for="userId">Preferred User ID</label>
-            <input id="userId" name="userId" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
+
+          <!--/* Preferred User ID. */-->
+          <div class="form-group">
+            <label for="userId">Preferred User ID</label>
+            <input id="userId" [(ngModel)]="userModel.userId" name="userId" type="text" maxlength="50"
+              class="form-control w-100" autocomplete="off">
           </div>
-					
-					<!--/* Email Address. */-->
-					<div class="form-group">
-						<label for="emailId">Email ID</label>
-            <input id="emailId" name="emailId" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
+
+          <!--/* Email Address. */-->
+          <div class="form-group">
+            <label for="emailId">Email ID</label>
+            <input id="emailIdiv" [(ngModel)]="userModel.emailId" name="emailId" type="text" maxlength="50"
+              class="form-control w-100" autocomplete="off">
+            <!--/* Password. */-->
           </div>
-					
-					<!--/* Password. */-->
-					<div class="form-group">
-						<label for="password">Password</label>
-            <input id="password" name="password" type="password" maxlength="50" class="form-control w-100" autocomplete="off">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" [(ngModel)]="userModel.password" name="password" type="password" maxlength="50"
+                class="form-control w-100" autocomplete="off">
+            </div>
+
+            <!--/* Retype Password. */-->
+            <div class="form-group">
+              <label for="reTypePassword">Retype Password</label>
+              <input id="reTypePassword" [(ngModel)]="userModel.reTypePassword" name="reTypePassword" type="password"
+                maxlength="50" class="form-control w-100" autocomplete="off">
+            </div>
+
           </div>
-					
-					<!--/* Retype Password. */-->
-					<div class="form-group">
-						<label for="reTypePassword">Retype Password</label>
-            <input id="reTypePassword" name="reTypePassword" type="password" maxlength="50" class="form-control w-100" autocomplete="off">
+          <div class="col-lg-6 col-md-4 bg-white">
+            <!--/* Address of the user who wants to login. */-->
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input id="address" [(ngModel)]="userModel.address" name="address" type="text" maxlength="50"
+                class="form-control w-100" autocomplete="off">
+            </div>
+
+            <!--/* The Taluka of the selection. */-->
+            <div class="form-group">
+              <label for="taluka">Taluka</label>
+              <input id="taluka" [(ngModel)]="userModel.taluka" name="taluka" type="text" maxlength="50"
+                class="form-control w-100" autocomplete="off">
+            </div>
+
+            <!--/* The District of the selection. */-->
+            <div class="form-group">
+              <label for="district">District</label>
+              <input id="district" [(ngModel)]="userModel.district" name="district" type="text" maxlength="50"
+                class="form-control w-100" autocomplete="off">
+            </div>
+
+            <!--/* The District of the selection. */-->
+            <div class="form-group">
+              <label for="pinCode">PIN Code</label>
+              <input id="pinCode" [(ngModel)]="userModel.pinCode" name="pinCode" type="text" maxlength="50"
+                class="form-control w-100" autocomplete="off">
+            </div>
+
+            <!--/* We may provide a Google API userModel. */-->
           </div>
-					
-				</div>
-				<div class="col-lg-6 col-md-4 bg-white">
-					<!--/* Address of the user who wants to login. */-->
-					<div class="form-group">
-						<label for="address">Address</label>
-            <input id="address" name="address" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
+          <div class="py-5 col">
+            <div class="d-flex justify-content-center">
+              <div class="col-lg-3 col-md-4">
+                <div class="form-group">
+                  <button type="submit" type="submit" class="btn btn-primary w-100 form-control">
+                    Create User
+                  </button>
+                </div>
+              </div>
+              <!--/* The button to reset the form selections. */-->
+              <div class="col-lg-3 col-md-4">
+                <div class="form-group">
+                  <button type="reset" type="reset" class="btn btn-warning w-100 form-control">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-					
-					<!--/* The Taluka of the selection. */-->
-					<div class="form-group">
-						<label for="taluka">Taluka</label>
-            <input id="taluka" name="taluka" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
-          </div>
-					
-					<!--/* The District of the selection. */-->
-					<div class="form-group">
-						<label for="district">District</label>
-            <input id="district" name="district" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
-          </div>
-					
-					<!--/* The District of the selection. */-->
-					<div class="form-group">
-						<label for="pinCode">PIN Code</label>
-            <input id="pinCode" name="pinCode" type="text" maxlength="50" class="form-control w-100" autocomplete="off">
-          </div>
-					
-					<!--/* We may provide a Google API to check if the user which is being create a user is valid or not. */-->
-					
-				</div>
-				<div class="py-5 col">
-					<div class="d-flex justify-content-center">
-						<div class="col-lg-3 col-md-4">
-							<div class="form-group">
-								<button type="submit" type="submit" class="btn btn-primary w-100 form-control">
-									Create User
-								</button>
-							</div>
-						</div>
-						<!--/* The button to reset the form selections. */-->
-						<div class="col-lg-3 col-md-4">
-							<div class="form-group">
-								<button type="reset" type="reset" class="btn btn-warning w-100 form-control">
-									Reset
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
-		</section>
-	</div>
+      </form>
+    </section>
+  </div>
 </div>
