@@ -28,7 +28,6 @@ const components = [AppComponent, LoginComponent, UserRegistrationComponent, Log
 	entryComponents: components
 })
 export class AppModule {
-	
 	constructor(private resolver: ComponentFactoryResolver) {
 		console.debug('The bootstrap has been called.');
 	}
@@ -38,9 +37,10 @@ export class AppModule {
 		components.forEach((componentRef: Type<{}>) => {
 			console.debug('Rendering the component ', this);
 			const factory = this.resolver.resolveComponentFactory(componentRef);
-			var documentNodes = document.querySelectorAll(factory.selector);
+			var documentNodes = document.getElementsByTagName(factory.selector);
 			for (let index = 0; index < documentNodes.length; index ++) {
-				var parentElement = documentNodes[index].parentElement;
+				var currentElement = documentNodes[index];
+				var parentElement = currentElement.parentElement;
 				if (parentElement.className !== 'responsible-by-parent') {
 					appRef.bootstrap(factory, parentElement);
 				} else {

@@ -1,55 +1,55 @@
 <div class="container mx-auto">
   <div class="user-registration-component">
     <section class="heading bg-primary text-white py-4 text-center h5">
-      User Registration for further enquiries.
+      {{ heading }}
     </section>
     <section class="user-body">
       <form class="row mx-0" #form="ngForm" (ngSubmit)="onSubmitForm(form)">
         <div class="col-lg-6 col-md-8 bg-light">
           <!--/* The First Name of the User who will be needed to login. */-->
           <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName">{{ firstName }}</label>
             <input autofocus="true" [(ngModel)]="userModel.firstName" id="firstName" name="firstName" type="text"
               maxlength="50" class="form-control w-100" autocomplete="off">
           </div>
 
           <!--/* The Middle Name. */-->
           <div class="form-group">
-            <label for="middleName">Middle Name</label>
+            <label for="middleName">{{ middleName }}</label>
             <input id="middleName" [(ngModel)]="userModel.middleName" name="middleName" type="text" maxlength="50"
               class="form-control w-100" autocomplete="off">
           </div>
 
           <!--/* The Last Name. */-->
           <div class="form-group">
-            <label for="lastName">Last Name</label>
+            <label for="lastName">{{ lastName }}</label>
             <input id="lastName" [(ngModel)]="userModel.lastName" name="lastName" type="text" maxlength="50"
               class="form-control w-100" autocomplete="off">
           </div>
 
           <!--/* Preferred User ID. */-->
           <div class="form-group">
-            <label for="userId">Preferred User ID</label>
+            <label for="userId">{{ preferredUserId }}</label>
             <input id="userId" [(ngModel)]="userModel.userId" name="userId" type="text" maxlength="50"
               class="form-control w-100" autocomplete="off">
           </div>
 
           <!--/* Email Address. */-->
           <div class="form-group">
-            <label for="emailId">Email ID</label>
+            <label for="emailId">{{ emailId }}</label>
             <input id="emailIdiv" [(ngModel)]="userModel.emailId" name="emailId" type="text" maxlength="50"
               class="form-control w-100" autocomplete="off">
             <!--/* Password. */-->
           </div>
             <div class="form-group">
-              <label for="password">Password</label>
+              <label for="password">{{ password }}</label>
               <input id="password" [(ngModel)]="userModel.password" name="password" type="password" maxlength="50"
                 class="form-control w-100" autocomplete="off">
             </div>
 
             <!--/* Retype Password. */-->
             <div class="form-group">
-              <label for="reTypePassword">Retype Password</label>
+              <label for="reTypePassword">{{ retypePassword }}</label>
               <input id="reTypePassword" [(ngModel)]="userModel.reTypePassword" name="reTypePassword" type="password"
                 maxlength="50" class="form-control w-100" autocomplete="off">
             </div>
@@ -58,28 +58,28 @@
           <div class="col-lg-6 col-md-4 bg-white">
             <!--/* Address of the user who wants to login. */-->
             <div class="form-group">
-              <label for="address">Address</label>
+              <label for="address">{{ address }}</label>
               <input id="address" [(ngModel)]="userModel.address" name="address" type="text" maxlength="50"
                 class="form-control w-100" autocomplete="off">
             </div>
 
             <!--/* The Taluka of the selection. */-->
             <div class="form-group">
-              <label for="taluka">Taluka</label>
+              <label for="taluka">{{ taluka }}</label>
               <input id="taluka" [(ngModel)]="userModel.taluka" name="taluka" type="text" maxlength="50"
                 class="form-control w-100" autocomplete="off">
             </div>
 
             <!--/* The District of the selection. */-->
             <div class="form-group">
-              <label for="district">District</label>
+              <label for="district">{{ district }}</label>
               <input id="district" [(ngModel)]="userModel.district" name="district" type="text" maxlength="50"
                 class="form-control w-100" autocomplete="off">
             </div>
 
             <!--/* The District of the selection. */-->
             <div class="form-group">
-              <label for="pinCode">PIN Code</label>
+              <label for="pinCode">{{ pinCode }}</label>
               <input id="pinCode" [(ngModel)]="userModel.pinCode" name="pinCode" type="text" maxlength="50"
                 class="form-control w-100" autocomplete="off">
             </div>
@@ -91,7 +91,7 @@
               <div class="col-lg-3 col-md-4">
                 <div class="form-group">
                   <button type="submit" type="submit" class="btn btn-primary w-100 form-control">
-                    Create User
+                    {{ createUser }}
                   </button>
                 </div>
               </div>
@@ -99,7 +99,7 @@
               <div class="col-lg-3 col-md-4">
                 <div class="form-group">
                   <button type="reset" type="reset" class="btn btn-warning w-100 form-control">
-                    Reset
+                    {{ resetButton }}
                   </button>
                 </div>
               </div>
